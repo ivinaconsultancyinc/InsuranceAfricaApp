@@ -1,0 +1,37 @@
+
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="password"] {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.dark-mode button:hover {
+  background-color: #555;
+}
+
+.dark-mode a {
+  color: #90caf9;
+}
+
+.dark-mode a:hover {
+  color: #64b5f6;
+}
+
+.dark-mode section {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}

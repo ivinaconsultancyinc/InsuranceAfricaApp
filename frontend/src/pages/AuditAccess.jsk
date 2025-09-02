@@ -1,0 +1,73 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const AuditAccess = () => {
+  const [records, setRecords] = useState([]);
+  const [formData, setFormData] = useState({
+    entity_type: "", entity_id: "", action: "", performed_by: "", details: ""
+  });
+
+  useEffect(() => {
+    fetchRecords();
+  }, []);
+
+  const fetchRecords = async () => {
+    try {
+      const response = await axios.get(`/api/auditaccess`);
+      setRecords(response.data);
+    } catch (error) {
+      console.error('Error fetching records:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`/api/auditaccess`, formData);
+      fetchRecords();
+      setFormData({
+        entity_type: "", entity_id: "", action: "", performed_by: "", details: ""
+      });
+    } catch (error) {
+      console.error('Error creating record:', error);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Create AuditAccess</h2>
+      <form onSubmit={handleSubmit}>
+        <input name="entity_type" value={formData.entity_type} onChange={handleChange} placeholder="entity_type" /> <input name="entity_id" value={formData.entity_id} onChange={handleChange} placeholder="entity_id" /> <input name="action" value={formData.action} onChange={handleChange} placeholder="action" /> <input name="performed_by" value={formData.performed_by} onChange={handleChange} placeholder="performed_by" /> <input name="details" value={formData.details} onChange={handleChange} placeholder="details" />
+        <button type="submit">Add</button>
+      </form>
+
+      <h2>AuditAccess List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>entity_type</th> <th>entity_id</th> <th>action</th> <th>performed_by</th> <th>details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {records.map(record => (
+            <tr key={record.id}>
+              <td>{record.id}</td>
+              <td>{record.entity_type}</td> <td>{record.entity_id}</td> <td>{record.action}</td> <td>{record.performed_by}</td> <td>{record.details}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default AuditAccess;
+
+
+
+

@@ -1,0 +1,27 @@
+InsuranceAfricaApp/
+├── backend/                         # FastAPI backend
+│   ├── models/                      # SQLAlchemy models
+│   │   └── __init__.py
+│   ├── schemas/                     # Pydantic schemas
+│   │   └── __init__.py
+│   ├── services/                    # Business logic
+│   │   └── __init__.py
+│   ├── routers/                     # API routes
+│   │   └── __init__.py
+│   ├── main.py                      # FastAPI entry point
+│   └── database.py                  # DB connection and session
+├── frontend/                        # React frontend
+│   └── src/
+│       ├── pages/                   # Views (e.g., Clients.jsx, Policies.jsx)
+│       ├── components/              # Reusable UI components
+│       ├── services/                # Axios API calls
+│       ├── auth/                    # Login, ProtectedRoute
+│       ├── styles/                  # CSS/SCSS files
+│       ├── config/                  # Constants and base URLs
+│       └── App.js                   # Main React app
+├── docs/                            # Documentation
+│   └── README.md                    # Project overview and usage
+├── .env                             # Environment variables (e.g., DB URL, secrets)
+├── .gitignore                       # Files to ignore in Git
+├── requirements.txt                 # Python dependencies
+└── render.yaml                      # Render deployment configuration

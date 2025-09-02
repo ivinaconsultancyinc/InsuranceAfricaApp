@@ -1,0 +1,31 @@
+/* styles/theme.css */
+
+/* Light Theme */
+:root {
+  --primary-color: #007BFF;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #dddddd;
+}
+
+/* Dark Theme */
+.dark-mode {
+  --primary-color: #90caf9;
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --border-color: #333333;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--primary-color);
+}
+
+section {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+}

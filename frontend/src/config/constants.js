@@ -1,0 +1,25 @@
+ export const FEATURE_FLAGS_BY_ROLE = {
+  admin: {
+    ENABLE_AUDIT_LOGS: true,
+    ENABLE_STATISTICAL_REPORTING: true,
+    ENABLE_CURRENCY_CONVERSION: true,
+    ENABLE_DASHBOARD_ANALYTICS: true,
+    ENABLE_BRANDING: true,
+    ENABLE_LOGIN_HELP: true,
+    ENABLE_MFA_PROMPT: true,
+  },
+  manager: {
+    ENABLE_STATISTICAL_REPORTING: true,
+    ENABLE_CURRENCY_CONVERSION: true,
+    ENABLE_DASHBOARD_ANALYTICS: true,
+    ENABLE_BRANDING: true,
+    ENABLE_LOGIN_HELP: true,
+    ENABLE_MFA_PROMPT: false,
+  },
+  user: {
+    ENABLE_CURRENCY_CONVERSION: true,
+    ENABLE_BRANDING: true,
+    ENABLE_LOGIN_HELP: true,
+    ENABLE_MFA_PROMPT: false,
+  }
+};
